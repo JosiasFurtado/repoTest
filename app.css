@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap");
+
+:root {
+  --primary: #4299e1;
+  --secondary: #dd6b20;
+  --light: #fff;
+  --hoverCard: #edf2f7;
+  --textDescript: #4a5568;
+  --subText: #a0aec0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.App__Container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#ovp-embed-search-app {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.App__Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 725px) {
+  .App__Header {
+    flex-direction: column-reverse;
+  }
+}
+
+.App__PaginationNav {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.App__PaginationNavButtons {
+  display: flex;
+  flex-direction: row;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.App__Arrow {
+  background-color: var(--hoverCard);
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.App__Arrow:hover {
+  background-color: var(--subText);
+}
+
+.App__Row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.App__ProjectCard {
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.App__ProjectCard:hover {
+  background-color: var(--hoverCard);
+}
+
+@media (min-width: 768px) {
+  .App__ProjectCard {
+    width: 25%;
+  }
+}
+
+.App__DivBtnInfiniteScroll {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.App__LoadBtnInfiniteScroll {
+  margin-right: auto;
+  margin-left: auto;
+  width: 130px;
+  height: 45px;
+  border-radius: 40px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 16px;
+  background-color: var(--light);
+  border: 1px solid var(--hoverCard);
+}
+
+.App__LoadBtnInfiniteScroll:hover {
+  background-color: var(--hoverCard);
+}
+
+.loadingAnimation {
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+.App__Loading {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+.SearchFilters__Flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.SearchFilters__SearchOption {
+  background-color: var(--light);
+  border: 1px solid var(--hoverCard);
+  padding: 8px 15px 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+@media (max-width: 690px) {
+  .SearchFilters__SearchOption {
+    padding: 8px 23px 8px 23px;
+  }
+
+  .SearchFilters__Flex {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.SearchFilters__SearchOption--active {
+  background-color: var(--primary);
+  color: var(--light);
+  border: 1px solid var(--hoverCard);
+  padding: 8px 13px 8px 13px;
+  border-radius: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.SearchFilters__SearchOption:hover {
+  background-color: var(--hoverCard);
+}
+
+.SearchFilters__Check {
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: -10px;
+  width: 16px;
+  height: 16px;
+  background: var(--hoverCard);
+  color: var(--hoverCard);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.SearchFilters__Check--active {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.SearchFilters__MenuList {
+  border-radius: 10px;
+  border-width: 0;
+  margin-top: 10px;
+  padding-top: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.SearchFilters__MenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SearchFilters__LogoONGs {
+  margin-right: 8px;
+  margin-left: -10px;
+  width: 25px;
+  height: 25px;
+  background: var(--hoverCard);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.SearchFilters__Check--ONG {
+  display: inline-block;
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  background: var(--hoverCard);
+  color: var(--hoverCard);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.SearchFilters__Check--active--ONG {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.ProjectCard {
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.ProjectCard__Image {
+  height: 175px;
+  width: auto;
+  border-radius: 10px;
+  background-size: cover;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.ProjectCard__Owner {
+  color: var(--subText);
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ProjectCard__Title {
+  font-size: 18px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ProjectCard__Description {
+  font-size: 14px;
+  color: var(--textDescript);
+  margin-bottom: 4px;
+  height: 95px;
+  line-height: 1.1rem;
+}
+
+@media (min-width: 768px) and (max-width: 835px) {
+  .ProjectCard__Description {
+    height: 120px;
+  }
+}
+
+.ProjectCard__Footer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.ProjectCard__Address {
+  display: flex;
+  flex-direction: row;
+  color: var(--textDescript);
+}
+.ProjectCard__Disponibility {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  color: var(--secondary);
+}
+
+.ProjectCard__FooterText {
+  font-size: 14px;
+  margin-left: 4px;
+}
