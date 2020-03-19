@@ -8,6 +8,7 @@
   --background: #000;
   --primary: #4299e1;
   --secondary: #dd2040;
+  --iconRemotely: #f5dccc;
   --light: #fff;
   --hoverColor: #999;
   --textDescript: #fafafa;
@@ -35,6 +36,10 @@ html {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -117,8 +122,6 @@ button:focus {
 }
 
 .App__ProjectCard {
-  margin-right: auto;
-  margin-left: auto;
   padding-left: 8px;
   padding-right: 8px;
   cursor: pointer;
@@ -173,6 +176,16 @@ button:focus {
 .App__Loading {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.App__ErrorMsg {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 20px;
+}
+
+.App__ErrorMsgTitle {
+  margin-bottom: 20px;
 }
 
 @keyframes rotation {
@@ -312,8 +325,20 @@ button:focus {
   background-size: cover;
   margin-bottom: 6px;
   display: flex;
+}
+
+.ProjectCard__CanRemotely {
+  display: flex;
+  align-self: flex-end;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: var(--iconRemotely);
+  color: var(--secondary);
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .ProjectCard__Owner {
