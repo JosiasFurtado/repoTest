@@ -5,17 +5,17 @@
 */
 
 :root {
-  --background: #fff;
+  --background: #000;
   --primary: #4299e1;
-  --secondary: #dd6b20;
+  --secondary: #dd2040;
   --light: #fff;
-  --hoverColor: #edf2f7;
-  --textDescript: #4a5568;
-  --subText: #a0aec0;
-  --textTitle: #000;
+  --hoverColor: #999;
+  --textDescript: #fafafa;
+  --subText: #fafafa;
+  --textTitle: #fff;
 
-  --backgroundFilters: #fff;
-  --filterTextcolor: #000;
+  --backgroundFilters: #000;
+  --filterTextcolor: #fff;
   --backgroundMenuList: #fff;
   --menuItemText: #000;
 }
