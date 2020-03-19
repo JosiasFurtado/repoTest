@@ -182,6 +182,7 @@ button:focus {
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 20px;
+  color: var(--textTitle);
 }
 
 .App__ErrorMsgTitle {
