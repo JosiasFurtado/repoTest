@@ -6,19 +6,20 @@
 
 :root {
   --background: #fff;
-  --primary: #4299e1;
-  --secondary: #dd6b20;
-  --iconRemotely: #f5dccc;
-  --light: #fff;
-  --hoverColor: #edf2f7;
-  --textDescript: #4a5568;
-  --subText: #a0aec0;
-  --textTitle: #000;
+  --color-primary: #4299e1;
+  --color-secondary: #dd6b20;
+  --color-tertiary: #edf2f7;
+  --remotely-indicator-color: #f5dccc;
 
-  --backgroundFilters: #fff;
-  --filterTextcolor: #000;
-  --backgroundMenuList: #fff;
-  --menuItemText: #000;
+  --title-color: #000;
+  --card-text-description-color: #4a5568;
+  --minor-text-color: #a0aec0;
+
+  --filter-btn-background-color: var(--background);
+  --filter-active-color: var(--color-primary);
+  --filter-title-color: #000;
+  --filter-list-background-color: var(--background);
+  --filter-list-item-color: #000;
 }
 
 /********************
@@ -88,7 +89,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--textTitle);
+  color: var(--title-color);
 }
 
 .App__PaginationNavButtons {
@@ -99,7 +100,7 @@ button:focus {
 }
 
 .App__Arrow {
-  background-color: var(--hoverColor);
+  background-color: var(--color-tertiary);
   width: 40px;
   height: 40px;
   border-radius: 30px;
@@ -111,7 +112,7 @@ button:focus {
 }
 
 .App__Arrow:hover {
-  background-color: var(--subText);
+  background-color: var(--minor-text-color);
 }
 
 .App__Row {
@@ -131,12 +132,12 @@ button:focus {
 }
 
 .App__ProjectCard:hover {
-  background-color: var(--hoverColor);
+  background-color: var(--color-tertiary);
 }
 
 @media (min-width: 750px) {
   .App__ProjectCard {
-    width: 30%;
+    width: 25%;
   }
 }
 
@@ -158,35 +159,42 @@ button:focus {
   width: 130px;
   height: 45px;
   border-radius: 40px;
-  color: var(--primary);
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 16px;
-  background-color: var(--light);
-  border: 1px solid var(--hoverColor);
+  background-color: var(--background);
+  border: 1px solid var(--color-tertiary);
 }
 
 .App__LoadBtnInfiniteScroll:hover {
-  background-color: var(--hoverColor);
+  background-color: var(--color-tertiary);
 }
 
-.loadingAnimation {
+.App__LoadingIcon {
   -webkit-animation: rotation 2s infinite linear;
+  color: var(--color-primary);
 }
 
 .App__Loading {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
 }
 
 .App__ErrorMsg {
   padding-left: 4px;
   padding-right: 4px;
   padding-top: 20px;
-  color: var(--textTitle);
+  color: var(--title-color);
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .App__ErrorMsgTitle {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+}
+
+.App__ErrorMsgHelp {
+  font-size: 24px;
 }
 
 @keyframes rotation {
@@ -212,19 +220,43 @@ button:focus {
 }
 
 .SearchFilters__SearchOption {
-  background-color: var(--backgroundFilters);
-  color: var(--filterTextcolor);
-  border: 1px solid var(--hoverColor);
-  padding: 8px 15px 8px 15px;
+  background-color: var(--filter-btn-background-color);
+  color: var(--filter-title-color);
+  border: 1px solid var(--color-tertiary);
+  padding: 8px 13px 8px 13px;
   border-radius: 20px;
   font-size: 14px;
-  margin-right: 9px;
+  margin-right: 8px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.SearchFilters__SearchOption--active {
+  background-color: var(--filter-active-color);
+  color: var(--background);
+  border: 1px solid var(--filter-active-color);
+  padding: 8px 13px 8px 13px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.SearchFilters__SearchOption:hover {
+  background-color: var(--color-tertiary);
+}
+
+.SearchFilters__SearchOption--icon {
+  margin-left: 2px;
 }
 
 @media (max-width: 690px) {
   .SearchFilters__SearchOption {
-    padding: 8px 23px 8px 23px;
+    padding: 8px 15px 8px 15px;
   }
 
   .SearchFilters__Flex {
@@ -233,35 +265,21 @@ button:focus {
   }
 }
 
-.SearchFilters__SearchOption--active {
-  background-color: var(--primary);
-  color: var(--light);
-  border: 1px solid var(--hoverColor);
-  padding: 8px 13px 8px 13px;
-  border-radius: 20px;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-.SearchFilters__SearchOption:hover {
-  background-color: var(--hoverColor);
-}
-
 .SearchFilters__Check {
   display: inline-block;
   margin-right: 8px;
   margin-left: -10px;
   width: 16px;
   height: 16px;
-  background: var(--hoverColor);
-  color: var(--hoverColor);
+  background: var(--color-tertiary);
+  color: var(--color-tertiary);
   border-radius: 50%;
   vertical-align: middle;
 }
 
 .SearchFilters__Check--active {
-  background: var(--light);
-  color: var(--primary);
+  background: var(--background);
+  color: var(--color-primary);
 }
 
 .SearchFilters__MenuList {
@@ -271,18 +289,32 @@ button:focus {
   padding-top: 8px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  background-color: var(--backgroundMenuList);
+  background-color: var(--filter-list-background-color);
+}
+
+.SearchFilters__MenuList--scroll {
+  border-radius: 10px;
+  border-width: 0;
+  margin-top: 10px;
+  padding-top: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: var(--filter-list-background-color);
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: 5px;
+  scrollbar-color: var(--color-primary);
 }
 
 .SearchFilters__MenuItem {
-  color: var(--menuItemText);
+  color: var(--filter-list-item-color);
 }
 
 .SearchFilters__MenuItemFlex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--menuItemText);
+  color: var(--filter-list-item-color);
 }
 
 .SearchFilters__LogoONGs {
@@ -290,7 +322,7 @@ button:focus {
   margin-left: -10px;
   width: 25px;
   height: 25px;
-  background: var(--hoverColor);
+  background: var(--color-tertiary);
   border-radius: 50%;
   vertical-align: middle;
 }
@@ -300,15 +332,15 @@ button:focus {
   margin-left: 8px;
   width: 16px;
   height: 16px;
-  background: var(--hoverColor);
-  color: var(--hoverColor);
+  background: var(--color-tertiary);
+  color: var(--color-tertiary);
   border-radius: 50%;
   vertical-align: middle;
 }
 
 .SearchFilters__Check--active--ONG {
-  background: var(--light);
-  color: var(--primary);
+  background: var(--background);
+  color: var(--color-primary);
 }
 
 /********************
@@ -336,14 +368,14 @@ button:focus {
   width: 40px;
   height: 30px;
   border-radius: 50px;
-  background-color: var(--iconRemotely);
-  color: var(--secondary);
+  background-color: var(--remotely-indicator-color);
+  color: var(--color-secondary);
   margin-bottom: 5px;
   margin-left: 5px;
 }
 
 .ProjectCard__Owner {
-  color: var(--subText);
+  color: var(--minor-text-color);
   font-size: 13px;
   margin-bottom: 6px;
   font-weight: normal;
@@ -358,18 +390,18 @@ button:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--textTitle);
+  color: var(--title-color);
 }
 
 .ProjectCard__Description {
   font-size: 14px;
-  color: var(--textDescript);
+  color: var(--card-text-description-color);
   margin-bottom: 4px;
   height: 95px;
   line-height: 1.1rem;
 }
 
-@media (min-width: 768px) and (max-width: 835px) {
+@media (min-width: 750px) and (max-width: 990px) {
   .ProjectCard__Description {
     height: 135px;
     margin-bottom: 2px;
@@ -385,13 +417,13 @@ button:focus {
 .ProjectCard__Address {
   display: flex;
   flex-direction: row;
-  color: var(--textDescript);
+  color: var(--card-text-description-color);
 }
 .ProjectCard__Disponibility {
   display: flex;
   flex-direction: row;
   margin-left: 8px;
-  color: var(--secondary);
+  color: var(--color-secondary);
 }
 
 .ProjectCard__FooterText {
