@@ -8,7 +8,7 @@
   --background: #fff;
   --color-primary: #4299e1;
   --color-secondary: #dd6b20;
-  --color-tertiary: #edf2f7;
+  --color-tertiary: #e2e8f0;
   --remotely-indicator-color: #f5dccc;
 
   --title-color: #000;
@@ -20,6 +20,9 @@
   --filter-title-color: #000;
   --filter-list-background-color: var(--background);
   --filter-list-item-color: #000;
+
+  --load-more-color: #2d3748;
+  --background-load-more: #edf2f7;
 }
 
 /********************
@@ -99,16 +102,22 @@ button:focus {
   padding-bottom: 4px;
 }
 
+.App_PaginationTextIndicator {
+  margin-right: 10px;
+}
+
 .App__Arrow {
   background-color: var(--color-tertiary);
   width: 40px;
   height: 40px;
   border-radius: 30px;
-  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.App__Arrow:last-child {
+  margin-left: 10px;
 }
 
 .App__Arrow:hover {
@@ -135,9 +144,15 @@ button:focus {
   background-color: var(--color-tertiary);
 }
 
+@media (max-width: 550px) {
+  .App__ProjectCard {
+    width: 100%;
+  }
+}
+
 @media (min-width: 750px) {
   .App__ProjectCard {
-    width: 25%;
+    width: 33.2%;
   }
 }
 
@@ -150,20 +165,19 @@ button:focus {
 .App__DivBtnInfiniteScroll {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .App__LoadBtnInfiniteScroll {
   margin-right: auto;
   margin-left: auto;
-  width: 130px;
-  height: 45px;
+  padding: 14px 20px;
   border-radius: 40px;
-  color: var(--color-primary);
+  color: var(--load-more-color);
   font-weight: bold;
   font-size: 16px;
-  background-color: var(--background);
-  border: 1px solid var(--color-tertiary);
+  background-color: var(--background-load-more);
+  cursor: pointer;
 }
 
 .App__LoadBtnInfiniteScroll:hover {
@@ -177,12 +191,11 @@ button:focus {
 
 .App__Loading {
   margin: auto;
+  padding: 20vh 0;
 }
 
 .App__ErrorMsg {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 20px;
+  padding: 20vh 4px;
   color: var(--title-color);
   text-align: center;
   margin-right: auto;
@@ -195,6 +208,20 @@ button:focus {
 
 .App__ErrorMsgHelp {
   font-size: 24px;
+}
+
+.App__PaginationFooter {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 14px 0;
+}
+
+@media (max-width: 550px) {
+  .App__PaginationFooter {
+    justify-content: center;
+  }
 }
 
 @keyframes rotation {
@@ -236,7 +263,7 @@ button:focus {
   background-color: var(--filter-active-color);
   color: var(--background);
   border: 1px solid var(--filter-active-color);
-  padding: 8px 13px 8px 13px;
+  padding: 8px 13px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 20px;
@@ -254,14 +281,14 @@ button:focus {
   margin-left: 2px;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 499px) {
   .SearchFilters__SearchOption {
-    padding: 8px 15px 8px 15px;
+    margin-right: 4px;
   }
 
   .SearchFilters__Flex {
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    overflow-x: scroll;
   }
 }
 
@@ -399,6 +426,13 @@ button:focus {
   margin-bottom: 4px;
   height: 95px;
   line-height: 1.1rem;
+}
+
+@media (max-width: 550px) {
+  .ProjectCard__Description {
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 750px) and (max-width: 990px) {
