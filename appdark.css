@@ -104,6 +104,7 @@ button:focus {
 
 .App_PaginationTextIndicator {
   margin-right: 10px;
+  color: var(--title-color);
 }
 
 .App__Arrow {
